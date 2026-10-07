@@ -99,18 +99,27 @@ window.CHUKS = {
   // Verified credentials / affiliations, e.g. [{ title: '', issuer: '', note: '' }]
   credentials: [],
 
-  /* IMAGES — temporary Unsplash photography.
-     To use a real CHUKS photo: replace  id: '…'  with  src: 'img/your-photo.jpg'
-     (keep alt text accurate). pos controls the crop focus. */
+  /* IMAGES — local stand-in photography in img/ (see img/CREDITS.md). Replace the files (or src paths) with real CHUKS photos;
+     keep alt text accurate. pos controls the crop focus. */
   images: {
-    hero:       { id: '1579154204601-01588f351e67', pos: '50% 50%', alt: 'A scientist working in a long, bright, modern medical laboratory' },
-    scientist:  { id: '1581093588401-fbb62a02f120', pos: '40% 40%', alt: 'Close-up of a laboratory scientist wearing protective eyewear' },
-    tubes:      { id: '1581594693702-fbdc51b2763b', pos: '50% 50%', alt: 'Blood sample tubes in a laboratory rack' },
-    microscope: { id: '1582719471384-894fbb16e074', pos: '55% 45%', alt: 'Laboratory scientist examining a sample under a microscope' },
-    pipette:    { id: '1532187863486-abf9dbad1b69', pos: '50% 50%', alt: 'Pipette loading samples into a laboratory tray' },
-    gloves:     { id: '1614935151651-0bea6508db6b', pos: '50% 40%', alt: 'Gloved hands pipetting a sample into test tubes' },
-    cells:      { id: '1576086213369-97a306d36557', pos: '50% 50%', alt: 'Microscopic view of stained cells' },
-    bottles:    { id: '1583912267550-d974311a9a6e', pos: '50% 50%', alt: 'Reagent bottles lined up on a laboratory shelf' },
-    patient:    { id: '1631815588090-d4bfec5b1ccb', pos: '50% 40%', alt: 'A healthcare worker attending to a patient' }
+    hero:       { src: 'img/hero.jpg',                    pos: '50% 50%', alt: 'A scientist working in a long, bright, modern medical laboratory' },
+    scientist:  { src: 'img/scientist.jpg',               pos: '40% 40%', alt: 'Close-up of a laboratory scientist wearing protective eyewear' },
+    tubes:      { src: 'img/tubes.jpg',                   pos: '50% 50%', alt: 'Blood sample tubes in a laboratory rack' },
+    microscope: { src: 'img/microscope.jpg',              pos: '55% 45%', alt: 'Laboratory scientist examining a sample under a microscope' },
+    pipette:    { src: 'img/pipette.jpg',                 pos: '50% 50%', alt: 'Pipette loading samples into a laboratory tray' },
+    gloves:     { src: 'img/gloves.jpg',                  pos: '50% 40%', alt: 'Gloved hands pipetting a sample into test tubes' },
+    cells:      { src: 'img/cells.jpg',                   pos: '50% 50%', alt: 'Microscopic view of stained cells' },
+    bottles:    { src: 'img/bottles.jpg',                 pos: '50% 50%', alt: 'Reagent bottles lined up on a laboratory shelf' },
+    patient:    { src: 'img/patient.jpg',                 pos: '50% 40%', alt: 'A healthcare worker attending to a patient' },
+    labgroup:   { src: 'img/wc-lab-group.jpg',            pos: '50% 50%', alt: 'A group of people working in a bright, open laboratory' },
+    labprep:    { src: 'img/wc-lab-prep.jpg',             pos: '60% 50%', alt: 'Blood bags and sample tubes laid out on a laboratory bench' },
+    labteam:    { src: 'img/wc-lab-team.jpg',             pos: '50% 50%', alt: 'A busy clinical laboratory with analysers and staff at work' },
+    labtech:    { src: 'img/wc-lab-tech.jpg',             pos: '40% 50%', alt: 'Hands working inside a laboratory safety cabinet with sample dishes' },
+    analyzer:   { src: 'img/wc-chem-analyzer.jpg',        pos: '50% 50%', alt: 'Sample tubes loaded in a laboratory centrifuge' },
+    micpair:    { src: 'img/wc-microscope-pair.jpg',      pos: '50% 40%', alt: 'Two scientists looking through a shared double-headed microscope' },
+    micside:    { src: 'img/wc-microscope-inverted.jpg',  pos: '50% 50%', alt: 'A scientist at a microscope in profile' },
+    micstereo:  { src: 'img/wc-microscope-scientist.jpg', pos: '50% 40%', alt: 'A scientist looking through a stereo microscope' },
+    slide:      { src: 'img/wc-slide-scientist.jpg',      pos: '60% 40%', alt: 'A scientist examining a slide under a microscope' },
+    pipettebowl:{ src: 'img/wc-pipette-close.jpg',        pos: '50% 50%', alt: 'A glass pipette resting on a white dish' }
   }
 };

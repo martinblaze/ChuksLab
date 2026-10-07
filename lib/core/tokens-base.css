@@ -1,0 +1,71 @@
+/* ==========================================================================
+   CHUKS MEDICAL LABORATORY CENTER — premium motion build
+   Palette + type carried over from the original brand (ivory / forest / leaf / lime,
+   Fraunces + Manrope). Layout, motion and artwork are new.
+   ========================================================================== */
+:root {
+  --ivory: #FBF9F3; --cream: #F2EEE1; --mint: #DCEEDF; --aqua: #E0F1EE;
+  --leaf: #3A9559; --leaf-soft: #7CC593; --forest: #0D2A1F; --forest-2: #164030;
+  --lime: #CDF36B; --ink: #10251C; --muted: #4A6155;
+  --sky-1: #4f9fd0; --sky-2: #a5d3e8; --sky-3: #e9f5f3;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --pad: clamp(1.25rem, 4vw, 3.5rem);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --ease-io: cubic-bezier(.76, 0, .24, 1);
+  --hdr: 4.75rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--ivory); }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--ivory); line-height: 1.55; font-size: 1rem; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img, svg, canvas { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+h1, h2, h3, h4, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+::selection { background: var(--lime); color: var(--forest); }
+:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; border-radius: 4px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- type ---------- */
+.eyebrow { font: 700 .72rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; display: inline-flex; align-items: center; gap: .7rem; }
+.eyebrow::before { content: ''; width: 1.6rem; height: 1px; background: currentColor; opacity: .6; }
+.display { font-family: var(--serif); font-weight: 300; font-variation-settings: 'SOFT' 100, 'opsz' 144; letter-spacing: -.035em; line-height: .94; }
+.display em, .h2 em, .big em { font-style: italic; font-weight: 300; color: var(--leaf); }
+.dark .display em, .dark .h2 em, .dark .big em, .lab em { color: var(--lime); }
+.h2 { font-family: var(--serif); font-weight: 300; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(2.4rem, 6.4vw, 6.2rem); line-height: .96; letter-spacing: -.03em; }
+.big { font-family: var(--serif); font-weight: 300; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(1.9rem, 4.8vw, 4.6rem); line-height: 1.04; letter-spacing: -.025em; }
+.lead { font-size: clamp(1.02rem, 1.25vw, 1.2rem); line-height: 1.65; color: var(--muted); max-width: 38rem; }
+.dark .lead, .lab .lead { color: rgba(251, 249, 243, .72); }
+.char, .word { display: inline-block; }
+.line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.draft { display: none; margin-left: .6rem; font: 700 .6rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; padding: .32rem .55rem; border-radius: 99px; background: var(--lime); color: var(--forest); vertical-align: middle; }
+.show-drafts .draft { display: inline-block; }
+
+/* ---------- buttons / links ---------- */
+.btn { --bg: var(--forest); --fg: var(--ivory); position: relative; display: inline-flex; align-items: center; gap: .9rem; padding: .5rem .5rem .5rem 1.5rem; border-radius: 99px; background: var(--bg); color: var(--fg); font: 700 .86rem/1 var(--sans); letter-spacing: .04em; overflow: hidden; isolation: isolate; border: 1px solid var(--bg); transition: color .5s var(--ease), border-color .5s var(--ease); will-change: transform; }
+.btn::before { content: ''; position: absolute; inset: 0; background: var(--lime); transform: translateY(101%); border-radius: 50% 50% 0 0 / 100% 100% 0 0; transition: transform .6s var(--ease), border-radius .6s var(--ease); z-index: -1; }
+.btn:hover::before { transform: translateY(0); border-radius: 0; }
+.btn:hover { color: var(--forest); border-color: var(--lime); }
+.btn__i { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--lime); color: var(--forest); transition: transform .5s var(--ease), background .5s; }
+.btn:hover .btn__i { transform: rotate(-45deg); background: var(--forest); color: var(--lime); }
+.btn__i svg { width: .95rem; height: .95rem; }
+.btn--lime { --bg: var(--lime); --fg: var(--forest); } .btn--lime::before { background: var(--forest); } .btn--lime:hover { color: var(--lime); border-color: var(--forest); } .btn--lime .btn__i { background: var(--forest); color: var(--lime); } .btn--lime:hover .btn__i { background: var(--lime); color: var(--forest); }
+.btn--line { --bg: transparent; --fg: currentColor; border-color: currentColor; } .btn--line .btn__i { background: var(--forest); color: var(--ivory); }
+.loc .btn--line .btn__i, .sec--dark .btn--line .btn__i, .lab .btn--line .btn__i { background: var(--lime); color: var(--forest); }
+.link { position: relative; display: inline-flex; align-items: center; gap: .55rem; font-weight: 700; font-size: .9rem; padding-bottom: .25rem; }
+.link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: currentColor; transform-origin: right; transition: transform .6s var(--ease); }
+.link:hover::after { transform: scaleX(0); transform-origin: right; animation: ul .6s .1s var(--ease) forwards; }
+@keyframes ul { from { transform: scaleX(0); transform-origin: left; } to { transform: scaleX(1); transform-origin: left; } }
+.link svg { width: .9rem; height: .9rem; transition: transform .5s var(--ease); } .link:hover svg { transform: translateX(.3rem); }
+
+/* ---------- reveal helpers (JS adds .js) ---------- */
+.js [data-r] { opacity: 0; transform: translateY(2.2rem); }
+.js .no-r [data-r] { opacity: 1; transform: none; }
+.js .hero [data-in] { opacity: 0; }
+.js .hero__title .char { opacity: 0; }
+.js .phero__in [data-in] { opacity: 0; }
+

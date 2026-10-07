@@ -1,0 +1,4 @@
+/* Page wipe transition: curtain that covers the screen between pages */
+.curtain { position: fixed; inset: 0; z-index: 9000; background: var(--forest); clip-path: inset(100% 0 0 0); pointer-events: none; display: grid; place-items: center; color: var(--lime); }
+.curtain span { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(2rem, 6vw, 4.5rem); opacity: 0; letter-spacing: -.02em; }
+html.wipe .curtain { clip-path: inset(0); }

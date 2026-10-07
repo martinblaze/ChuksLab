@@ -1,0 +1,47 @@
+/* ---------- photo kit: framed photos, reveal gallery, expanding band, photo strip ---------- */
+.ph { position: relative; overflow: hidden; border-radius: var(--r, 1.6rem); background: var(--forest-2); isolation: isolate; }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; will-change: transform; opacity: 0; transition: opacity .8s var(--ease); }
+.ph img.loaded { opacity: 1; }
+.ph--arch { border-radius: 50vw 50vw var(--r, 1.6rem) var(--r, 1.6rem); }
+[data-parallax] { overflow: hidden; }
+[data-parallax] img { position: absolute; left: 0; top: -12%; height: 124%; width: 100%; }
+.js [data-img-reveal] { clip-path: inset(100% 0 0 0); }
+html.static [data-img-reveal] { clip-path: none; }
+.cap { display: block; margin-top: .8rem; font: 700 .68rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.cap b { color: var(--leaf); margin-right: .6rem; }
+
+/* gallery: three photos in a staggered grid, each opened by a clip-path wipe */
+.gal { padding: clamp(5rem, 10vw, 9rem) var(--pad); background: var(--ivory); }
+.gal__head { display: grid; gap: 1.2rem; margin-bottom: clamp(2.2rem, 5vw, 4rem); max-width: 52rem; }
+.gal__grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.gal figure { margin: 0; }
+@media (min-width: 56em) {
+  .gal__grid { grid-template-columns: repeat(12, 1fr); gap: 1.4rem; align-items: start; }
+  .gal__a { grid-column: 1 / span 5; } .gal__a .ph { aspect-ratio: 4 / 5; }
+  .gal__b { grid-column: 7 / span 6; margin-top: 9vw; } .gal__b .ph { aspect-ratio: 16 / 11; }
+  .gal__c { grid-column: 3 / span 4; margin-top: -2vw; } .gal__c .ph { aspect-ratio: 1; }
+  .gal__d { grid-column: 8 / span 4; margin-top: 3vw; } .gal__d .ph { aspect-ratio: 3 / 4; }
+}
+@media (max-width: 55.99em) { .gal .ph { aspect-ratio: 4 / 3; } }
+
+/* band: a photo that opens from a window into the full screen while a sentence appears over it */
+.band { position: relative; background: var(--forest); }
+.band__pin { position: relative; height: 100vh; height: 100svh; overflow: hidden; display: grid; place-items: center; background: var(--ivory); }
+.band__img { position: absolute; inset: 0; clip-path: inset(18% 26% 18% 26% round 2.2rem); overflow: hidden; }
+.band__img img { width: 100%; height: 100%; object-fit: cover; }
+.band__img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13, 42, 31, .25), rgba(13, 42, 31, .72)); }
+.band__txt { position: relative; z-index: 2; color: var(--ivory); text-align: center; padding: 0 var(--pad); display: grid; gap: 1.2rem; justify-items: center; }
+.band__txt .big { font-size: clamp(2.2rem, 6.4vw, 6.4rem); max-width: 16ch; }
+.band__txt .big em { color: var(--lime); }
+html.static .band__pin { height: auto; min-height: 80vh; } html.static .band__img { clip-path: none; }
+@media (max-width: 56em) { .band__img { clip-path: inset(10% 8% 10% 8% round 1.4rem); } }
+
+/* strip: a row of photos that slides sideways as the section scrolls past */
+.strip { overflow: hidden; background: var(--cream); padding: clamp(3rem, 6vw, 5.5rem) 0; }
+.strip__track { display: flex; gap: clamp(.8rem, 1.6vw, 1.4rem); width: max-content; padding: 0 var(--pad); align-items: flex-end; will-change: transform; }
+.strip .ph { width: clamp(13rem, 21vw, 21rem); aspect-ratio: 3 / 4; --r: 1.2rem; flex: none; }
+.strip .ph:nth-child(even) { aspect-ratio: 4 / 5; margin-bottom: clamp(1.5rem, 4vw, 4rem); }
+.strip .ph:nth-child(3n) { aspect-ratio: 1; }
+.strip__label { padding: 0 var(--pad) 1.6rem; display: flex; justify-content: space-between; align-items: end; gap: 2rem; }
+.strip__label .h2 { font-size: clamp(2rem, 4.6vw, 4.2rem); }
+html.static .strip__track { width: auto; flex-wrap: wrap; }

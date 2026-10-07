@@ -1,0 +1,11 @@
+/* ---------- location ---------- */
+.loc { position: relative; background: var(--forest); color: var(--ivory); overflow: hidden; padding: clamp(5rem, 12vw, 11rem) var(--pad); }
+.loc__top { display: grid; gap: 2rem; }
+.loc__giant { font-family: var(--serif); font-weight: 300; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(3.4rem, 15vw, 17rem); line-height: .86; letter-spacing: -.05em; margin-top: 2rem; }
+.loc__giant span { display: block; will-change: transform; } .loc__giant em { color: var(--lime); font-style: italic; }
+.loc__row { display: grid; gap: 2rem; margin-top: 3.5rem; } @media (min-width: 56em) { .loc__row { grid-template-columns: 1.2fr 1fr; align-items: end; } }
+.loc .cl { opacity: .16; mix-blend-mode: screen; }
+
+.loc__bg { position: absolute; inset: 0; z-index: 0; } .loc__bg img { opacity: 0; transition: opacity 1s; width: 100%; } .loc__bg img.loaded { opacity: .5; }
+.loc__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, var(--forest) 0%, rgba(13, 42, 31, .55) 40%, var(--forest) 100%); }
+.loc > .loc__top, .loc > .loc__row { position: relative; z-index: 2; } .loc > .cl { z-index: 1; }

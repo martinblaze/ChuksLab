@@ -1,0 +1,5 @@
+/* ---------- cursor + progress ---------- */
+.cur { position: fixed; z-index: 9800; left: 0; top: 0; width: .8rem; height: .8rem; margin: -.4rem 0 0 -.4rem; border-radius: 50%; background: var(--lime); mix-blend-mode: difference; pointer-events: none; opacity: 0; transition: width .4s var(--ease), height .4s var(--ease), margin .4s var(--ease), opacity .3s; }
+.cur.on { opacity: 1; } .cur.big { width: 4.4rem; height: 4.4rem; margin: -2.2rem 0 0 -2.2rem; }
+.prog { position: fixed; z-index: 99; left: 0; top: 0; height: 3px; width: 100%; transform-origin: left; transform: scaleX(0); background: var(--leaf); }
+@media (hover: none), (pointer: coarse) { .cur { display: none; } }

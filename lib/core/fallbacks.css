@@ -1,0 +1,6 @@
+/* ---------- static / reduced-motion fallbacks ---------- */
+html.static .dive__pin { height: auto; min-height: 100vh; overflow: visible; }
+html.static .lab { position: relative; clip-path: none; min-height: 70vh; } html.static .lab .word { opacity: 1; }
+html.static [data-r], html.static .hero [data-in], html.static .hero__title .char, html.static .phero__in [data-in] { opacity: 1 !important; transform: none !important; }
+html.static .pr__grid { width: 100%; height: auto; } html.static .step { position: relative; top: 0; margin-bottom: 1rem; }
+@media (prefers-reduced-motion: reduce) { .marq__t, .badge svg, .scrollhint i { animation: none; } }

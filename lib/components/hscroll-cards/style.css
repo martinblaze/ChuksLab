@@ -1,0 +1,25 @@
+/* ---------- services (horizontal scroll) ---------- */
+.svc { position: relative; background: var(--ivory); }
+.svc__pin { position: relative; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; }
+.svc__track { display: flex; align-items: center; gap: clamp(1rem, 2.4vw, 2.4rem); padding: 0 var(--pad); will-change: transform; height: 100%; padding-top: var(--hdr); }
+.svc__intro { flex: 0 0 min(44rem, 80vw); display: grid; gap: 1.6rem; align-content: center; padding-right: 3vw; }
+.svc__intro .h2 { font-size: clamp(2.6rem, 7vw, 6.6rem); }
+.svc__bar { position: absolute; left: var(--pad); right: var(--pad); bottom: 2.2rem; height: 2px; background: rgba(13, 42, 31, .14); } .svc__bar i { display: block; height: 100%; background: var(--leaf); transform-origin: left; transform: scaleX(0); }
+.svc__count { position: absolute; right: var(--pad); bottom: 3rem; font: 700 .72rem/1 var(--sans); letter-spacing: .18em; }
+.card { position: relative; flex: 0 0 clamp(17rem, 27vw, 26rem); height: min(68vh, 36rem); border-radius: 1.6rem; overflow: hidden; color: var(--ivory); background: var(--forest); display: flex; flex-direction: column; justify-content: flex-end; isolation: isolate; }
+.card__art { position: absolute; inset: 0 -9%; z-index: -1; }
+.card__art img, .card__art canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), opacity .8s; }
+.card__art img { opacity: 0; } .card__art img.loaded { opacity: 1; }
+.card__art canvas { mix-blend-mode: soft-light; opacity: .75; }
+.card:hover .card__art img { transform: scale(1.1); }
+.card::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(13, 42, 31, 0) 35%, rgba(13, 42, 31, .82) 100%); }
+.card__b { padding: 1.6rem; display: grid; gap: .7rem; }
+.card .n { font: 700 .7rem/1 var(--sans); letter-spacing: .2em; color: var(--lime); }
+.card h3 { font-family: var(--serif); font-weight: 300; font-size: clamp(1.5rem, 2.2vw, 2.2rem); line-height: 1.02; letter-spacing: -.02em; }
+.card p { font-size: .9rem; color: rgba(251, 249, 243, .8); }
+.svc__end { flex: 0 0 min(26rem, 70vw); display: grid; gap: 1.2rem; align-content: center; padding: 0 3vw; }
+@media (max-width: 56em) {
+  .svc__pin { height: auto; display: block; padding: 6rem 0 4rem; }
+  .svc__track { height: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding-top: 0; padding-bottom: 1.5rem; -webkit-overflow-scrolling: touch; }
+  .svc__track > * { scroll-snap-align: start; } .svc__bar, .svc__count { display: none; } .card { height: 28rem; flex-basis: 78vw; }
+}

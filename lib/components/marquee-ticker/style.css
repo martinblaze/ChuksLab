@@ -1,0 +1,6 @@
+/* ---------- marquee ---------- */
+.marq { overflow: hidden; background: var(--lime); color: var(--forest); padding: 1.15rem 0; white-space: nowrap; border-block: 1px solid var(--forest); }
+.marq__t { display: inline-flex; gap: 2.4rem; animation: marq 32s linear infinite; padding-right: 2.4rem; will-change: transform; }
+.marq span { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 3.2vw, 2.6rem); display: inline-flex; align-items: center; gap: 2.4rem; }
+.marq span::after { content: '✦'; font-style: normal; font-size: .6em; }
+@keyframes marq { to { transform: translateX(-50%); } }

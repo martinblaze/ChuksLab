@@ -1,0 +1,37 @@
+/* ---------- inner pages ---------- */
+.phero { position: relative; overflow: hidden; min-height: 78vh; display: grid; align-content: end; padding: calc(var(--hdr) + 4rem) var(--pad) clamp(2.4rem, 5vw, 4rem); color: var(--forest); isolation: isolate; }
+.phero .sky { inset: 0; z-index: -2; } .phero .cl { z-index: -1; }
+.phero__in { display: grid; gap: 1.4rem; max-width: 70rem; position: relative; z-index: 2; }
+.phero .display { font-size: clamp(3.2rem, 11vw, 10.5rem); } .phero .display em { color: var(--leaf); }
+.sec { padding: clamp(4rem, 9vw, 8rem) var(--pad); position: relative; }
+.sec--cream { background: var(--cream); } .sec--mint { background: var(--mint); } .sec--dark { background: var(--forest); color: var(--ivory); }
+.split { display: grid; gap: clamp(1.6rem, 4vw, 4rem); } @media (min-width: 56em) { .split { grid-template-columns: 1fr 1fr; align-items: start; } .split--l { grid-template-columns: 5fr 7fr; } }
+.stack-t { display: grid; gap: 1.2rem; }
+.rows { border-top: 1px solid rgba(13, 42, 31, .18); }
+.row { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem 2rem; align-items: center; padding: 1.8rem 0; border-bottom: 1px solid rgba(13, 42, 31, .18); position: relative; transition: padding .6s var(--ease); }
+@media (min-width: 56em) { .row { grid-template-columns: 4rem 1.1fr 1.4fr 9rem; } .row:hover { padding-left: 1.2rem; } }
+.row .n { font: 700 .72rem/1 var(--sans); letter-spacing: .18em; color: var(--leaf); }
+.row h3 { font-family: var(--serif); font-weight: 300; font-size: clamp(1.6rem, 3.4vw, 3.2rem); letter-spacing: -.025em; line-height: 1; }
+.row p { color: var(--muted); max-width: 32rem; }
+.row .th { display: none; width: 9rem; height: 6rem; border-radius: 1rem; overflow: hidden; transform: scale(.7) rotate(-6deg); opacity: 0; transition: transform .7s var(--ease), opacity .5s; }
+.row .th canvas, .row .th img { width: 100%; height: 100%; object-fit: cover; } @media (min-width: 56em) { .row .th { display: block; } .row:hover .th { transform: none; opacity: 1; } }
+.faq { border-top: 1px solid rgba(13, 42, 31, .18); } .faq details { border-bottom: 1px solid rgba(13, 42, 31, .18); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 1.5rem; align-items: center; padding: 1.5rem 0; font-family: var(--serif); font-weight: 300; font-size: clamp(1.25rem, 2.2vw, 2rem); letter-spacing: -.015em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary i { position: relative; flex: none; width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 1.5px solid currentColor; transition: transform .6s var(--ease), background .4s; }
+.faq summary i::before, .faq summary i::after { content: ''; position: absolute; left: 50%; top: 50%; width: .8rem; height: 1.5px; background: currentColor; transform: translate(-50%, -50%); } .faq summary i::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .6s var(--ease); }
+.faq details[open] summary i { background: var(--lime); transform: rotate(180deg); } .faq details[open] summary i::after { transform: translate(-50%, -50%) rotate(0); }
+.faq .ans { overflow: hidden; } .faq .ans p { padding: 0 0 1.6rem; color: var(--muted); max-width: 44rem; } .pending { font-size: .95rem; }
+.facts { display: grid; gap: 0; border-top: 1px solid rgba(13, 42, 31, .18); } .fact { display: grid; gap: .3rem 2rem; padding: 1.3rem 0; border-bottom: 1px solid rgba(13, 42, 31, .18); } @media (min-width: 40em) { .fact { grid-template-columns: 9rem 1fr; } }
+.fact dt { font: 700 .7rem/1.6 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--leaf); } .fact dd { margin: 0; } .soft { color: var(--muted); }
+.mapbox { position: relative; border-radius: 1.6rem; overflow: hidden; min-height: 22rem; background: var(--mint); } .mapbox iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.8) contrast(1.02); }
+.field { display: grid; gap: .5rem; margin-bottom: 1.3rem; } .field label { font: 700 .7rem/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--leaf); }
+.field input, .field textarea { font: inherit; padding: .9rem 0; border: 0; border-bottom: 1.5px solid rgba(13, 42, 31, .3); background: transparent; border-radius: 0; color: inherit; transition: border-color .4s; } .field textarea { min-height: 8rem; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: 0; border-color: var(--leaf); }
+.form__status { margin-top: 1rem; font-size: .9rem; color: var(--leaf); min-height: 1.4em; }
+.chips { display: flex; flex-wrap: wrap; gap: .6rem; } .chip { padding: .55rem 1rem; border-radius: 99px; border: 1px solid currentColor; font: 700 .72rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+
+.phero__photo { display: none; position: absolute; right: var(--pad); bottom: clamp(2rem, 5vw, 4rem); width: clamp(15rem, 27vw, 27rem); aspect-ratio: 4 / 5; z-index: 2; --r: 1.4rem; }
+.phero__photo img { position: absolute; inset: 0; }
+@media (min-width: 62em) { .phero__photo { display: block; } .phero--photo .phero__in { max-width: min(56rem, 62vw); } .phero--photo .display { font-size: clamp(3.2rem, 8.4vw, 8.4rem); } }
+.split-photo { display: grid; gap: 1.2rem; } .split-photo .ph { aspect-ratio: 4 / 3; }

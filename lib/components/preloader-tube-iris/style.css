@@ -1,0 +1,12 @@
+/* Preloader: test tube fills with a counter, then a circular iris closes */
+.pre { position: fixed; inset: 0; z-index: 9500; background: var(--forest); color: var(--ivory); display: grid; place-items: center; clip-path: circle(150% at 50% 50%); }
+.pre__in { display: grid; justify-items: center; gap: 1.4rem; }
+.pre__tube { width: 5.4rem; height: auto; overflow: visible; color: var(--ivory); }
+.pre__liquid { fill: var(--lime); }
+.pre__num { font-family: var(--serif); font-weight: 300; font-size: clamp(4.4rem, 12vw, 9rem); line-height: .9; letter-spacing: -.05em; display: flex; align-items: baseline; font-variation-settings: 'SOFT' 100, 'opsz' 144; }
+.pre__num small { font-size: .32em; margin-left: .15em; color: var(--lime); font-style: italic; }
+.pre__label { font: 700 .7rem/1 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: rgba(251, 249, 243, .65); }
+.pre__corner { position: absolute; font: 700 .66rem/1.5 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: rgba(251, 249, 243, .5); }
+.pre__corner.tl { top: 1.5rem; left: var(--pad); } .pre__corner.br { bottom: 1.5rem; right: var(--pad); }
+html.js:not(.no-pre) body.is-loading { overflow: hidden; }
+

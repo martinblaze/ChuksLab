@@ -1,0 +1,6 @@
+/* ---------- sky + clouds ---------- */
+.sky { position: absolute; inset: -10% 0 0; background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 48%, var(--sky-3) 100%); }
+.sky::after { content: ''; position: absolute; left: 50%; top: 58%; width: 80vmax; height: 80vmax; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(255, 255, 255, .55), rgba(255, 255, 255, 0)); }
+.cl { position: absolute; inset: 0; pointer-events: none; will-change: transform; }
+.cl .cloud { position: absolute; height: auto; user-select: none; will-change: transform; filter: drop-shadow(0 14px 22px rgba(40, 90, 130, .16)); }
+.cl--back { opacity: .95; } .cl--front { z-index: 4; }
