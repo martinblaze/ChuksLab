@@ -1,7 +1,7 @@
 /* ---------- steps (stacking cards) ---------- */
-.steps { background: var(--cream); padding: clamp(5rem, 11vw, 10rem) var(--pad); }
+.steps { overflow-x: clip; background: var(--cream); padding: clamp(5rem, 11vw, 10rem) var(--pad); }
 .steps__head { display: grid; gap: 1.4rem; margin-bottom: clamp(2.5rem, 6vw, 5rem); max-width: 56rem; }
-.stack { display: grid; gap: 0; }
+.stack { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; max-width: 100%; }
 .step { position: sticky; top: calc(var(--hdr) + var(--i) * 1.1rem); margin-bottom: 14vh; border-radius: 2rem; padding: clamp(1.4rem, 3.4vw, 3.4rem); min-height: 56vh; display: grid; grid-template-columns: auto 1fr minmax(0, .95fr); gap: clamp(1rem, 4vw, 4rem); align-content: space-between; background: var(--ivory); border: 1px solid rgba(13, 42, 31, .12); box-shadow: 0 -18px 50px rgba(13, 42, 31, .08); transform-origin: top center; will-change: transform; }
 .step:nth-child(2) { background: var(--mint); } .step:nth-child(3) { background: var(--aqua); } .step:nth-child(4) { background: var(--lime); }
 .step__n { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(5rem, 14vw, 13rem); line-height: .8; color: var(--leaf); letter-spacing: -.05em; }
@@ -10,5 +10,8 @@
 .step__b h3 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 4.4vw, 4rem); line-height: 1; letter-spacing: -.03em; }
 .step__b p { color: var(--muted); } .step:nth-child(4) .step__b p { color: var(--forest-2); }
 .step__img { align-self: stretch; min-height: 14rem; --r: 1.2rem; } .step__img img { position: absolute; inset: 0; }
-@media (max-width: 62em) { .step { grid-template-columns: auto 1fr; } .step__img { grid-column: 1 / -1; min-height: 12rem; aspect-ratio: 16 / 8; } }
-@media (max-width: 44em) { .step { grid-template-columns: 1fr; min-height: 48vh; } .step__n { font-size: 5.5rem; } }
+.step > * { min-width: 0; }
+.step__img { position: relative; overflow: hidden; max-width: 100%; }
+.step__img img { inset: -8% 0; height: 116%; }
+@media (max-width: 62em) { .step { grid-template-columns: auto minmax(0, 1fr); } .step__img { grid-column: 1 / -1; min-height: 12rem; aspect-ratio: 16 / 8; } }
+@media (max-width: 44em) { .step { grid-template-columns: minmax(0, 1fr); min-height: 0; padding: 1.2rem; border-radius: 1.4rem; margin-bottom: 8vh; } .step__n { font-size: 4rem; } .step__img { aspect-ratio: 4 / 3; min-height: 0; } }

@@ -20,6 +20,7 @@
 .svc__end { flex: 0 0 min(26rem, 70vw); display: grid; gap: 1.2rem; align-content: center; padding: 0 3vw; }
 @media (max-width: 56em) {
   .svc__pin { height: auto; display: block; padding: 6rem 0 4rem; }
-  .svc__track { height: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding-top: 0; padding-bottom: 1.5rem; -webkit-overflow-scrolling: touch; }
+  .svc__track { height: auto; overflow-x: auto; scroll-snap-type: x proximity; overscroll-behavior-x: contain; scroll-padding: 0 var(--pad); padding-top: 0; padding-bottom: 1.5rem; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .svc__track::-webkit-scrollbar { display: none; }
   .svc__track > * { scroll-snap-align: start; } .svc__bar, .svc__count { display: none; } .card { height: 28rem; flex-basis: 78vw; }
 }
